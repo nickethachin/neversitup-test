@@ -22,7 +22,6 @@ const countSmilyFace = (text) => {
   /* -------------------------------------------------------------------------- */
   // TODO : start your code here
 
-  if (text.join("").match(/[^:;-~)D]/)) throw new Error("Invalid input");
   if (text.length === 0) return 0;
 
   let result = 0;
