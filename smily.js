@@ -21,6 +21,17 @@ const countSmilyFace = (text) => {
   // Order of the face (eyes, nose, mouth) elements will always be the same
   /* -------------------------------------------------------------------------- */
   // TODO : start your code here
+
+  if (text.join("").match(/[^:;-~)D]/)) throw new Error("Invalid input");
+  if (text.length === 0) return 0;
+
+  let result = 0;
+
+  text.forEach((element) => {
+    if (element.match(/[:;][-~]?[)D]/)) result++;
+  });
+
+  return result;
 };
 
 module.exports = {
