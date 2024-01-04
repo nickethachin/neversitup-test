@@ -22,14 +22,23 @@ const countSmilyFace = (text) => {
   /* -------------------------------------------------------------------------- */
   // TODO : start your code here
 
+  // If input array is empty, return 0
   if (text.length === 0) return 0;
 
+  // Prepare result variable
   let result = 0;
 
+  // Loop through each element in input array
   text.forEach((element) => {
+    // Check if element is a valid smily face
+    // Regex breakdown:
+    // - /[;:] = mean text to match must start with either ; or :
+    // - [-~]? = mean text to match can have - or ~, but not required
+    // - [)D]/ = mean text to match must end with either ) or D
     if (element.match(/[:;][-~]?[)D]/)) result++;
   });
 
+  // Return result
   return result;
 };
 
